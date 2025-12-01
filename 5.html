@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>李泉翰的自我介紹</title>
+<style>
+
+  body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fffaf3;
+  }
+
+  header {
+    background-color: #f9c81e;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1 {
+    color: #1e1e1e;
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 3px;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 150px);
+  }
+
+  .left {
+    width: 40%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    border-right: 3px solid #f9c81e;
+  }
+
+  .left img {
+    width: 65%;
+    border-radius: 15px;
+    margin-bottom: 40px;
+  }
+
+  .right {
+    position: relative;   
+    width: 70%;
+    background-color: #ffffff;
+    padding: 50px;
+    color: #333;
+  }
+
+
+  .right img.corner-img {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 180px;
+    border-radius: 20px;
+  }
+
+  .right h2 {
+    color: #1e1e1e;
+    border-left: 8px solid #f9c81e;
+    padding-left: 20px;
+    margin-top: 25px;
+    font-size: 24px;
+  }
+
+  .right p {
+    font-size: 18px;
+    margin: 8px 0;
+    line-height: 1.8;
+    transition: color 0.2s ease;
+  }
+
+
+  .highlight {
+    color: #d35400;
+    font-weight: bold;
+  }
+
+  .toggleBtn {
+    background-color: #f9c81e;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>個人自我介紹</h1>
+</header>
+
+<div class="container">
+
+  <div class="left">
+    <h2>個人照片</h2>
+    <img src="a1.jpeg" alt="個人照片">
+  </div>
+
+  <div class="right">
+
+    <button class="toggleBtn" id="toggleBtn">隱藏個人資料</button>
+
+    <div id="infoContent">
+      <h2>個人資料</h2>
+      <p>姓名：李泉翰</p>
+      <p>簡歷：我來自花蓮，從小樂觀開朗，對理科有興趣，喜歡打球、看電影和玩電腦遊戲。</p>
+      <p>學歷：國立台東大學應用數學系畢業</p>
+      <p>經歷：從花蓮高中畢業至今。</p>
+      <p>專業能力：無。</p>
+      <p>參與專案／活動／作品：忘了。</p>
+      <p>榮譽／獎項：微積分競試優良獎。</p>
+      <p>聯絡方式：11304144@gm.nttu.edu.tw</p>
+    </div>
+
+    <img id="cornerImg" src="11.jpg" class="corner-img" alt="logo">
+
+  </div>
+
+</div>
+
+<script>
+
+  const paragraphs = document.querySelectorAll(".right p");
+
+  paragraphs.forEach(p => {
+    p.addEventListener("mouseenter", function () {
+      p.classList.add("highlight");
+    });
+    p.addEventListener("mouseleave", function () {
+      p.classList.remove("highlight");
+    });
+  });
+
+
+  const btn = document.getElementById("toggleBtn");
+  const info = document.getElementById("infoContent");
+
+  btn.addEventListener("click", function () {
+    if (info.style.display === "none") {
+      info.style.display = "block";
+      btn.textContent = "隱藏個人資料";
+    } else {
+      info.style.display = "none";
+      btn.textContent = "顯示個人資料";
+    }
+});
+const cornerImg = document.getElementById("cornerImg");
+
+cornerImg.addEventListener("mouseenter", function() {
+  cornerImg.src = "22.JPG";  
+});
+
+cornerImg.addEventListener("mouseleave", function() {
+  cornerImg.src = "11.jpg";   
+});
+
+</script>
+
+</body>
+</html>
+
